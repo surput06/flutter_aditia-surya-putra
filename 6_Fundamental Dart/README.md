@@ -15,16 +15,16 @@
   Sama seperti variabel namun nilainya tidak dapat diubah (tetap)
 ### Tipe Data
   Merupakan Jenis data yang dapat diolah.Berikut Jenis-jenis Tipe Data :
-  -Int => Bilangan Bulat
-  -Double => Bilangan Pechan
-  -Bool => Boelan True atau false
-  -String => Teks
+  - Int => Bilangan Bulat
+  - Double => Bilangan Pechan
+  - Bool => Boelan True atau false
+  - String => Teks
 ### Operator 
  Operator merupakan alat yang digunakan untuk pengolahan data 
- -Aritmatik untuk penghitungan matematika 
- -Asigment untuk memberi nilai pada variabel
- -Comparsion Sebagai pembanding
- -Logical untuk menggabung beberapa kondisi
+ - Aritmatik untuk penghitungan matematika 
+ - Asigment untuk memberi nilai pada variabel
+ - Comparsion Sebagai pembanding
+ - Logical untuk menggabung beberapa kondisi
   
 Referensi:
 https://www.dicoding.com/
