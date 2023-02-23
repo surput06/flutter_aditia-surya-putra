@@ -2,7 +2,7 @@
 
 ## Pengertian Dart
   Dart Adalah bahasa yang dikembangkan oleh google dan merupakan bahasa pemograman dari flutter dimana flutter merupakan sebuah framework yang dapat digunakan untuk       mengenembangkan aplikasi multiflatform .Dengan Dart melalui Framework Fluter dapat mempercepat pengembangan suatu aplikasi.
-## Dart Op spesifikasi seperti berikut :
+## Dart mempunyai spesifikasi seperti berikut :
   - Type Safe => Dart menjamin konsistensi tipe data
   - Null Safety => Dart mempunyai keamanan dari data bernilai NULL
   - Rich Standard Libary => Dart mempuyai banyak libary internal
