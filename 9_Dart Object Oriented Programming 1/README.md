@@ -12,12 +12,12 @@ Class merupakan Abstraksi Dari suatu objek.Class mempunyai propety dan method
 #### Object 
 Object merupkan sebuah eksistansi itu sendiri 
 #### contoh
-  hewan h1 = hewan()
+     hewan h1 = hewan()
   
 #### Property
 Merupakan ciri khas dari suartu class. Property memiliki sifat seperti variabel
 #### Contoh
-  Class hewan {
+    Class hewan {
       int kakiHewan = 4;
       }
       
