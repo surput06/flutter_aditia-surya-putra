@@ -32,6 +32,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    //controler yang digunakan di form
     TextEditingController namaControler = TextEditingController();
     TextEditingController emailControler = TextEditingController();
     TextEditingController pengalamanControler = TextEditingController();
@@ -52,63 +53,61 @@ class _MyHomePageState extends State<MyHomePage> {
           width: double.infinity,
           child: Column(
             children: [
+              //Header
+              //membuat container dengan custom shape
               Container(
                 decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color(0xFFFF0063),
-                          Color(0Xffcc2182),
-                        ]),
-                    borderRadius:
-                        BorderRadius.only(bottomRight: Radius.circular(57))),
-                height: 350.0,
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Image(
-                          image: AssetImage(
-                        'assets/logo.png',
-                      )),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
-                        child: Text(
-                          " Share your experience with \n another person. \n Scroll To fill the experience \n form .",
-                          style: TextStyle(fontSize: 20, color: Colors.white),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 40, 44, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            SizedBox(
-                              height: 47,
-                              width: 149,
-                              child: ElevatedButton(
-                                onPressed: () {
-                                  Scrollable.ensureVisible(key1.currentContext!,
-                                      duration: const Duration(seconds: 1));
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0xFF0c4295),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(36))),
-                                child: const Text(
-                                  "Form",
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
+                    //membuat warna container bergradien
+                    gradient: LinearGradient(begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [
+                      Color(0xFFFF0063),
+                      Color(0Xffcc2182),
                     ]),
+                    //membuat border radius pada sisi kanan bawah
+                    borderRadius: BorderRadius.only(bottomRight: Radius.circular(57))),
+                height: 350.0,
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  //menambakan gambar logo
+                  const Image(
+                      image: AssetImage(
+                    'assets/logo.png',
+                  )),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(15, 20, 0, 0),
+                    //Deskripsi aplikasi
+                    child: Text(
+                      " Share your experience with \n another person. \n Scroll To fill the experience \n form .",
+                      style: TextStyle(fontSize: 20, color: Colors.white),
+                    ),
+                  ),
+                  //membuat button scroll jika di tekan maka akan scroll ke bagian form
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 40, 44, 0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          height: 47,
+                          width: 149,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Scrollable.ensureVisible(key1.currentContext!, duration: const Duration(seconds: 1));
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF0c4295),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+                            ),
+                            child: const Text(
+                              "Form",
+                              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ]),
               ),
+              //membuat form
               Padding(
                 padding: const EdgeInsets.fromLTRB(20, 100, 20, 20),
                 child: SizedBox(
@@ -118,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       padding: const EdgeInsets.all(20.0),
                       child: Column(
                         children: [
+                          //membuat form dengan controller agar nanti dapat di digunakan pada soal c
                           TextField(
                             keyboardType: TextInputType.name,
                             controller: namaControler,
@@ -138,15 +138,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             minLines: 10,
                             maxLines: 15,
                             decoration: const InputDecoration(
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.always,
-                                focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        width: 1.5, color: Colors.blue)),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                        width: 1, color: Colors.grey)),
-                                label: Text("Tell Us your experience")),
+                              floatingLabelBehavior: FloatingLabelBehavior.always,
+                              focusedBorder: OutlineInputBorder(borderSide: BorderSide(width: 1.5, color: Colors.blue)),
+                              enabledBorder: OutlineInputBorder(borderSide: BorderSide(width: 1, color: Colors.grey)),
+                              label: Text("Tell Us your experience"),
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 40),
@@ -161,34 +157,25 @@ class _MyHomePageState extends State<MyHomePage> {
                                     onPressed: () {
                                       String nama = namaControler.text.trim();
                                       String email = emailControler.text.trim();
-                                      String pengalaman =
-                                          pengalamanControler.text.trim();
-                                      if (nama.isNotEmpty &&
-                                          email.isNotEmpty &&
-                                          pengalaman.isNotEmpty) {
+                                      String pengalaman = pengalamanControler.text.trim();
+                                      if (nama.isNotEmpty && email.isNotEmpty && pengalaman.isNotEmpty) {
                                         showDialog(
                                             context: context,
-                                            builder: (BuildContext) =>
-                                                AlertDialog(
+                                            builder: (BuildContext) => AlertDialog(
                                                   title: const Text("data"),
                                                   content: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    mainAxisSize: MainAxisSize.min,
                                                     children: [
                                                       const Text("Your Name :"),
                                                       Text(
                                                         nama,
                                                       ),
-                                                      const Text(
-                                                          "Your Email : "),
+                                                      const Text("Your Email : "),
                                                       Text(
                                                         email,
                                                       ),
-                                                      const Text(
-                                                          "Your Experience :"),
+                                                      const Text("Your Experience :"),
                                                       Text(
                                                         pengalaman,
                                                       ),
@@ -197,34 +184,26 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   actions: [
                                                     ElevatedButton(
                                                         onPressed: () {
-                                                          Navigator.pop(
-                                                              context);
+                                                          Navigator.pop(context);
                                                         },
-                                                        child:
-                                                            const Text("Close"))
+                                                        child: const Text("Close"))
                                                   ],
                                                 ));
                                       } else {
                                         showDialog(
                                             context: context,
-                                            builder: (BuildContext) =>
-                                                const AlertDialog(
-                                                  content: Text(
-                                                      "Isi dulu semua form yang tersedia"),
+                                            builder: (BuildContext) => const AlertDialog(
+                                                  content: Text("Isi dulu semua form yang tersedia"),
                                                 ));
                                       }
                                     },
                                     style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            const Color(0xFF0c4295),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(36))),
+                                      backgroundColor: const Color(0xFF0c4295),
+                                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+                                    ),
                                     child: const Text(
                                       "Submit",
-                                      style: TextStyle(
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.w700),
+                                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                                     ),
                                   ),
                                 ),
