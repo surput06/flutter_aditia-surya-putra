@@ -124,8 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ElevatedButton(
                         //button style untuk mengatur style button
                         style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll<Color>(
-                              Color(0xFF6750A4)),
+                          backgroundColor: MaterialStatePropertyAll<Color>(Color(0xFF6750A4)),
                         ),
                         onPressed: () {
                           //Berfungsi untuk menyimpan nama ke dalam list
@@ -188,10 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Text(
             //membuat text dengan huruf pertama kontak di kapitalisasi
             contacts[index].nama[0].toUpperCase(),
-            style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF21005D)),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Color(0xFF21005D)),
           ),
         ),
         //judul listtile
@@ -235,15 +231,11 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                                 ElevatedButton(
                                     style: const ButtonStyle(
-                                      backgroundColor:
-                                          MaterialStatePropertyAll<Color>(
-                                              Color(0xFF6750A4)),
+                                      backgroundColor: MaterialStatePropertyAll<Color>(Color(0xFF6750A4)),
                                     ),
                                     onPressed: () {
-                                      String nama =
-                                          namaControllerUpdate.text.trim();
-                                      String noHp =
-                                          noHpControllerUpdate.text.trim();
+                                      String nama = namaControllerUpdate.text.trim();
+                                      String noHp = noHpControllerUpdate.text.trim();
                                       if (nama.isNotEmpty && noHp.isNotEmpty) {
                                         setState(() {
                                           namaControllerUpdate.text = '';
