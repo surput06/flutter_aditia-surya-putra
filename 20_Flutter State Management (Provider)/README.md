@@ -2,7 +2,7 @@
 20_Flutter State Management (Provider)
 </h1>
 
-##State Management 
+## State Management 
 State management digunakan untuk mengelola data dan memastikan bahwa tampilan aplikasi selalu konsisten dengan data yang tersimpan di dalamnya. Provider merupakan salah satu package yang populer digunakan untuk mengatasi masalah state management di Flutter.
 
 ## Global state 
