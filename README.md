@@ -16,3 +16,6 @@
 - [17_Assets](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/17_Assets)
 - [18_Dialog Bottom Sheet](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/18_Dialog%20Bottom%20Sheet)
 - [19_Flutter Navigation](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/19_Flutter%20Navigation)
+- [20_Flutter State Management (Provider)](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/20_Flutter%20State%20Management%20(Provider))
+- [22_Flutter Animation](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/22_Flutter%20Animation)
+- [Weekly1](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/Weekly1)
