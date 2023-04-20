@@ -19,6 +19,6 @@
 - [20_Flutter State Management (Provider)](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/20_Flutter%20State%20Management%20(Provider))
 - [22_Flutter Animation](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/22_Flutter%20Animation)
 - [Weekly1](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/Weekly1)
-- [Weekly2]()
+- [Weekly2](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/Weekly2)
 - [25_Introduction REST API - JSON serialization deserialization](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/25_Introduction%20REST%20API%20-%20JSON%20serialization%20deserialization)
 - [28_UI Testing](https://github.com/surput06/flutter_aditia-surya-putra/tree/main/28_UI%20Testing)
