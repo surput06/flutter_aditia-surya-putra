@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
+// import http untuk ambil data dari api
+import 'package:http/http.dart' as http;
+//import flutter svg untuk menampilkan svg
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Dicebear',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Dicebear'),
     );
   }
 }
@@ -30,7 +33,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void _incrementCounter() {}
+// Url digunakan untuk menympan url yang di ambil dari dicebear
+  String url = "";
+  //membuat fungsi _ambilGambar untuk mengambil gambar dari api dan merubahnya menjadi svg
+
+  void _ambilGambar() async {
+    final response = await http.get(Uri.parse("https://api.dicebear.com/6.x/bottts/svg"));
+    if (response.statusCode == 200) {
+      setState(() {
+        url = response.body;
+      });
+    } else {
+      setState(() {
+        url = "Data gambar tidak ada";
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,20 +59,21 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          //memanggil svg
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            if (url.isNotEmpty)
+              SvgPicture.string(
+                url,
+                width: 200,
+                height: 200,
+              ),
           ],
         ),
       ),
+      //pada floatingaction button jalankan fungsi ambilgambar
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
+        onPressed: _ambilGambar,
+        tooltip: 'Fetch Api',
         child: const Icon(Icons.add),
       ),
     );
